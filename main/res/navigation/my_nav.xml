@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/signUp">
+
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.example.afinal.signUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUp_to_logIn"
+            app:destination="@id/logIn" />
+        <action
+            android:id="@+id/action_signUp_to_my_home"
+            app:destination="@id/my_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/logIn"
+        android:name="com.example.afinal.logIn"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logIn_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_logIn_to_my_home"
+            app:destination="@id/my_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/my_home"
+        android:name="com.example.afinal.my_home"
+        android:label="fragment_my_home"
+        tools:layout="@layout/fragment_my_home" >
+        <action
+            android:id="@+id/action_my_home_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_my_home_to_stats"
+            app:destination="@id/stats" />
+        <action
+            android:id="@+id/action_my_home_to_transactions"
+            app:destination="@id/transactions" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactions"
+        android:name="com.example.afinal.transactions"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions" >
+        <action
+            android:id="@+id/action_transactions_to_my_home"
+            app:destination="@id/my_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/stats"
+        android:name="com.example.afinal.stats"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_stats_to_my_home"
+            app:destination="@id/my_home" />
+    </fragment>
+</navigation>
